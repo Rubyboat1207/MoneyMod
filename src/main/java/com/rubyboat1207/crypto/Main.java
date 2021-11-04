@@ -8,5 +8,6 @@ public class Main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		Items.RegisterItems();
+		Blocks.registerBlocks();
 	}
 }

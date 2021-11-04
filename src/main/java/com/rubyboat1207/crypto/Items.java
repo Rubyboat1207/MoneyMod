@@ -16,6 +16,6 @@ public class Items {
     public static void RegisterItems()
     {
         Registry.register(Registry.ITEM, new Identifier(Main.MODID, "ruby"), RUBIES);
-        Registry.register(Registry.ITEM, new Identifier(Main.MODID, "crypto_wallet"), CRYPTO_WALLET);
+        Registry.register(Registry.ITEM, new Identifier(Main.MODID, "wallet"), CRYPTO_WALLET);
     }
 }

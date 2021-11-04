@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "rbcypto:block/miner_top",
+    "side": "rbcypto:block/miner_side"
+  }
+}
