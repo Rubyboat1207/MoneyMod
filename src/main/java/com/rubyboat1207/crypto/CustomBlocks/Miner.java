@@ -36,7 +36,7 @@ public class Miner extends Block implements BlockEntityProvider {
 
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if (random.nextInt(5) == 0) {
+        if (random.nextInt(2) == 0) {
             BlockEntity be = world.getBlockEntity(pos);
             if(be instanceof MinerEntity)
             {
@@ -74,8 +74,15 @@ public class Miner extends Block implements BlockEntityProvider {
             {
                 CryptoWallet wallet = (CryptoWallet) player.getMainHandStack().getItem();
                 wallet.setCryptoAmmount(wallet.getCryptoAmmount(player.getMainHandStack()) + blockEntity.currentCoins, player.getMainHandStack());
-                blockEntity.currentCoins = 0;
-                return ActionResult.SUCCESS;
+                if(blockEntity.currentCoins == 0)
+                {
+                    return ActionResult.PASS;
+                }else
+                {
+                    blockEntity.currentCoins = 0;
+                    return ActionResult.SUCCESS;
+                }
+
             }
         }
 
